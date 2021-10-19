@@ -1,7 +1,7 @@
 # WorldRM
 Install the root directory into the progs directory of freeglut (download on sourceforge.net https://sourceforge.net/projects/freeglut/)
 
-Remove the file CMakeLists.txt
+Remove the file CMakeCache.txt
 
 Rename the root project directory WorldRMM
 

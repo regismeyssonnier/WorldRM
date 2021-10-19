@@ -1,0 +1,3 @@
+/root/freeglut-3.2.1/progs/WorldRMM/CMakeFiles/rebuild_cache.dir
+/root/freeglut-3.2.1/progs/WorldRMM/CMakeFiles/World.dir
+/root/freeglut-3.2.1/progs/WorldRMM/CMakeFiles/edit_cache.dir

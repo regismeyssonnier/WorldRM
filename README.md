@@ -1,5 +1,6 @@
 # WorldRM
-Rename the project directory WorldRMM
+Install the root directory into the progs directory of freeglut (download on sourceforge.net)
+Rename the root project directory WorldRMM
 
 Compile:
 

@@ -1,4 +1,5 @@
 # WorldRM
+Rename the project directory WorldRMM
 
 Compile:
 

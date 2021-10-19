@@ -1,0 +1,227 @@
+<html>
+<head>
+
+
+</head>
+
+
+
+<script type="text/javascript">
+
+	function Clear(){
+	
+		x1.value = '';
+		y1.value = '';
+		z1.value = '';
+		
+		x2.value = '';
+		y2.value = '';
+		z2.value = '';
+		
+		x3.value = '';
+		y3.value = '';
+		z3.value = '';
+	
+	}
+	
+	function Clear_sc(){
+	
+		xs1.value = '';
+		ys1.value = '';
+		zs1.value = '';
+		
+		xs2.value = '';
+		ys2.value = '';
+		zs2.value = '';
+		
+		theta.value = '';
+	
+	
+	}
+	
+	function Clear_n(){
+	
+		xn1.value = '';
+		yn1.value = '';
+		zn1.value = '';
+		
+		xn3.value = '';
+		yn3.value = '';
+		zn3.value = '';
+		
+		lg.innerHTML = '';
+	
+	}
+
+	function Cross_product(){
+	
+		var ux = new Number(x1.value);
+		var uy = new Number(y1.value);
+		var uz = new Number(z1.value);
+		
+		var vx = new Number(x2.value);
+		var vy = new Number(y2.value);
+		var vz = new Number(z2.value);
+		
+		var xx3 = 0;
+		var yy3 = 0;
+		var zz3 = 0;
+		
+		xx3 = uy * vz - uz * vy;
+		yy3 = uz * vx - ux * vz;
+		zz3 = ux * vy - uy * vx;
+		
+		x3.value = xx3;
+		y3.value = yy3;
+		z3.value = zz3;
+		
+	}
+	
+	
+	function Dot_product(){
+	
+		var ux = new Number(xs1.value);
+		var uy = new Number(ys1.value);
+		var uz = new Number(zs1.value);
+		
+		var vx = new Number(xs2.value);
+		var vy = new Number(ys2.value);
+		var vz = new Number(zs2.value);
+		
+		var th = 0;
+		var th2 = 0;
+		
+		//th = Math.sqrt( Math.pow(ux * vx, 2) + Math.pow(uy * vy, 2) + Math.pow(uz * vz, 2) );
+		th2 = ux * vx + uy * vy + uz * vz;
+		theta.value = th2;//* 57.295779513082;
+		
+		
+		
+	
+	}
+	
+	
+	function Normaliser(){
+	
+		var x = new Number(xn1.value);
+		var y = new Number(yn1.value);
+		var z = new Number(zn1.value);
+		var lng = 0;
+		
+		lng = Math.sqrt(x * x + y * y + z * z);		
+		
+		lg.innerHTML = lng;
+		
+		xn3.value = x / lng;
+		yn3.value = y / lng;
+		zn3.value = z / lng;
+		
+		
+	}
+	
+
+</script>
+
+<body style="background-color:black;color:white;">
+
+<center><h1 style="color:red;">Produit vectoriel</h1></center>
+
+<div style="width:430px;height:400px;margin:auto;padding:10px 20px 10px 20px;border:1px solid;">
+
+<div style="border:1px dotted;width:200px;height:170px;float:left;">
+X1 <input type="text" id="x1" name="x1" /><br/>
+Y1 <input type="text" id="y1" name="y1" /><br/>
+Z1 <input type="text" id="z1" name="z1" />
+
+</div>
+
+<div style="border:1px dotted;width:200px;height:170px;float:left;margin-left:20px;">
+X2 <input type="text" id="x2" name="x2" /><br/>
+Y2 <input type="text" id="y2" name="y2" /><br/>
+Z2 <input type="text" id="z2" name="z2" />
+
+</div>
+
+<br><br><br><br><br>
+
+<div style="border:1px dashed;width:420px;height:170px;margin-top:100px;clear:both;">
+<center>X3 <input type="text" id="x3" name="x3" /><br/></center>
+<center>Y3 <input type="text" id="y3" name="y3" /><br/></center>
+<center>Z3 <input type="text" id="z3" name="z3" /></center>
+
+</div>
+<br><br>
+<input type="button" name="clear" value="Clear" onclick="Clear()"/> 
+<input type="button" name="button_cross" value="Produit vectoriel" onclick="Cross_product()" /> 
+
+</div>
+
+
+<center><h1 style="color:red;">Produit scalaire</h1></center>
+
+<div style="width:430px;height:400px;margin:auto;padding:10px 20px 10px 20px;border:1px solid;">
+
+<div style="border:1px dotted;width:200px;height:170px;float:left;">
+X1 <input type="text" id="xs1" name="xs1" /><br/>
+Y1 <input type="text" id="ys1" name="ys1" /><br/>
+Z1 <input type="text" id="zs1" name="zs1" />
+
+</div>
+
+<div style="border:1px dotted;width:200px;height:170px;float:left;margin-left:20px;">
+X2 <input type="text" id="xs2" name="xs2" /><br/>
+Y2 <input type="text" id="ys2" name="ys2" /><br/>
+Z2 <input type="text" id="zs2" name="zs2" />
+
+</div>
+
+
+<br><br><br><br>
+<div style="border:1px dashed;width:420px;height:170px;margin-top:100px;clear:both;">
+<center>õ <input type="text" id="theta" name="theta" /><br/></center>
+<center><span style="color:white;text-size:3px;">
+Si theta = 0 , angle = (90° ou 270°); theta = 1 , angle = (360°)<br/>
+Si theta = -1 , angle = (180°)
+</span></center>
+
+</div>
+<br><br>
+<input type="button" name="clear_sc" value="Clear" onclick="Clear_sc()"/> 
+<input type="button" name="button_scal" value="Produit scalaire" onclick="Dot_product()" /> 
+
+</div>
+
+
+<center><h1 style="color:red;">Normaliser</h1></center>
+
+<div style="width:430px;height:400px;margin:auto;padding:10px 20px 10px 20px;border:1px solid;">
+
+<div style="border:1px dotted;width:200px;height:170px;float:left;">
+X1 <input type="text" id="xn1" name="xn1" /><br/>
+Y1 <input type="text" id="yn1" name="yn1" /><br/>
+Z1 <input type="text" id="zn1" name="zn1" />
+
+</div>
+
+<div style="border:1px dotted;width:200px;height:170px;float:left;margin-left:20px;">
+longueur :<br/>
+<center><span id="lg"></span></center>
+
+</div>
+
+
+<br><br><br><br>
+<div style="border:1px dashed;width:420px;height:200px;margin-top:100px;clear:both;">
+<center>X3 <input type="text" id="xn3" name="xn3" /><br/></center>
+<center>Y3 <input type="text" id="yn3" name="yn3" /><br/></center>
+<center>Z3 <input type="text" id="zn3" name="zn3" /></center>
+
+</div>
+<br><br>
+<input type="button" name="clear" value="Clear" onclick="Clear_n()"/> 
+<input type="button" name="button_cross" value="Normaliser" onclick="Normaliser()" /> 
+
+</div>
+
+
+</body>
